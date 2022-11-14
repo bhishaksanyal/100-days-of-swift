@@ -59,3 +59,34 @@ struct City {
 }
 let london = City(population: 9_000_000)
 print(london.collectTaxes())
+
+// Mutating methods
+struct Person {
+    var name: String
+
+    mutating func makeAnonymous() {
+        name = "Anonymous"
+    }
+}
+var person = Person(name: "Ed")
+person.makeAnonymous()
+
+// Properties and methods of strings
+let string = "This is a sample string!"
+print(string.count)
+print(string.customMirror)
+print(string.debugDescription)
+print(string.endIndex)
+print(string.sorted())
+print(string.uppercased())
+print(string.hasPrefix("Do"))
+
+// Properties and methods of arrays
+var friends: [String] = ["Alex", "Moody"]
+friends.count
+friends.append("Sourav")
+friends.sorted()
+friends.capacity
+friends.firstIndex(of: "Moody")
+friends.remove(at: friends.firstIndex(of: "Moody")!)
+print(friends)
